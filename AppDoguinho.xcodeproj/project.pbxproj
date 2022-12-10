@@ -7,25 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6736E29A2944078500D0307E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6736E2992944078500D0307E /* ResultViewController.swift */; };
+		6736E29C294407F300D0307E /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6736E29B294407F300D0307E /* ResultView.swift */; };
 		676C185E293D434100F0B858 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676C185D293D434100F0B858 /* AppDelegate.swift */; };
 		676C1860293D434100F0B858 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676C185F293D434100F0B858 /* SceneDelegate.swift */; };
 		676C1862293D434100F0B858 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676C1861293D434100F0B858 /* ViewController.swift */; };
-		676C1865293D434100F0B858 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 676C1863293D434100F0B858 /* Main.storyboard */; };
 		676C1868293D434100F0B858 /* AppDoguinho.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 676C1866293D434100F0B858 /* AppDoguinho.xcdatamodeld */; };
 		676C186A293D434200F0B858 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 676C1869293D434200F0B858 /* Assets.xcassets */; };
 		676C186D293D434200F0B858 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 676C186B293D434200F0B858 /* LaunchScreen.storyboard */; };
+		676C1876293D457E00F0B858 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676C1875293D457E00F0B858 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6736E2992944078500D0307E /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		6736E29B294407F300D0307E /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		676C185A293D434100F0B858 /* AppDoguinho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppDoguinho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		676C185D293D434100F0B858 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		676C185F293D434100F0B858 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		676C1861293D434100F0B858 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		676C1864293D434100F0B858 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		676C1867293D434100F0B858 /* AppDoguinho.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppDoguinho.xcdatamodel; sourceTree = "<group>"; };
 		676C1869293D434200F0B858 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		676C186C293D434200F0B858 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		676C186E293D434200F0B858 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		676C1875293D457E00F0B858 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6736E2982944056A00D0307E /* ResultadoScreen */ = {
+			isa = PBXGroup;
+			children = (
+				6736E2992944078500D0307E /* ResultViewController.swift */,
+				6736E29B294407F300D0307E /* ResultView.swift */,
+			);
+			path = ResultadoScreen;
+			sourceTree = "<group>";
+		};
 		676C1851293D434100F0B858 = {
 			isa = PBXGroup;
 			children = (
@@ -58,16 +71,25 @@
 		676C185C293D434100F0B858 /* AppDoguinho */ = {
 			isa = PBXGroup;
 			children = (
+				6736E2982944056A00D0307E /* ResultadoScreen */,
+				676C1874293D44A500F0B858 /* MainScreen */,
 				676C185D293D434100F0B858 /* AppDelegate.swift */,
 				676C185F293D434100F0B858 /* SceneDelegate.swift */,
-				676C1861293D434100F0B858 /* ViewController.swift */,
-				676C1863293D434100F0B858 /* Main.storyboard */,
 				676C1869293D434200F0B858 /* Assets.xcassets */,
 				676C186B293D434200F0B858 /* LaunchScreen.storyboard */,
 				676C186E293D434200F0B858 /* Info.plist */,
 				676C1866293D434100F0B858 /* AppDoguinho.xcdatamodeld */,
 			);
 			path = AppDoguinho;
+			sourceTree = "<group>";
+		};
+		676C1874293D44A500F0B858 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				676C1875293D457E00F0B858 /* MainView.swift */,
+				676C1861293D434100F0B858 /* ViewController.swift */,
+			);
+			path = MainScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,7 +152,6 @@
 			files = (
 				676C186D293D434200F0B858 /* LaunchScreen.storyboard in Resources */,
 				676C186A293D434200F0B858 /* Assets.xcassets in Resources */,
-				676C1865293D434100F0B858 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,21 +165,16 @@
 				676C1862293D434100F0B858 /* ViewController.swift in Sources */,
 				676C185E293D434100F0B858 /* AppDelegate.swift in Sources */,
 				676C1868293D434100F0B858 /* AppDoguinho.xcdatamodeld in Sources */,
+				676C1876293D457E00F0B858 /* MainView.swift in Sources */,
 				676C1860293D434100F0B858 /* SceneDelegate.swift in Sources */,
+				6736E29C294407F300D0307E /* ResultView.swift in Sources */,
+				6736E29A2944078500D0307E /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		676C1863293D434100F0B858 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				676C1864293D434100F0B858 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		676C186B293D434200F0B858 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -296,7 +312,6 @@
 				INFOPLIST_FILE = AppDoguinho/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -324,7 +339,6 @@
 				INFOPLIST_FILE = AppDoguinho/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
