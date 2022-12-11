@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6736E29A2944078500D0307E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6736E2992944078500D0307E /* ResultViewController.swift */; };
 		6736E29C294407F300D0307E /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6736E29B294407F300D0307E /* ResultView.swift */; };
+		6736E2A32946606800D0307E /* DogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6736E2A22946606800D0307E /* DogModel.swift */; };
 		676C185E293D434100F0B858 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676C185D293D434100F0B858 /* AppDelegate.swift */; };
 		676C1860293D434100F0B858 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676C185F293D434100F0B858 /* SceneDelegate.swift */; };
 		676C1862293D434100F0B858 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676C1861293D434100F0B858 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		6736E2992944078500D0307E /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		6736E29B294407F300D0307E /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		6736E2A22946606800D0307E /* DogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogModel.swift; sourceTree = "<group>"; };
 		676C185A293D434100F0B858 /* AppDoguinho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppDoguinho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		676C185D293D434100F0B858 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		676C185F293D434100F0B858 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			children = (
 				676C1875293D457E00F0B858 /* MainView.swift */,
 				676C1861293D434100F0B858 /* ViewController.swift */,
+				6736E2A22946606800D0307E /* DogModel.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 				676C185E293D434100F0B858 /* AppDelegate.swift in Sources */,
 				676C1868293D434100F0B858 /* AppDoguinho.xcdatamodeld in Sources */,
 				676C1876293D457E00F0B858 /* MainView.swift in Sources */,
+				6736E2A32946606800D0307E /* DogModel.swift in Sources */,
 				676C1860293D434100F0B858 /* SceneDelegate.swift in Sources */,
 				6736E29C294407F300D0307E /* ResultView.swift in Sources */,
 				6736E29A2944078500D0307E /* ResultViewController.swift in Sources */,

@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     var screen:MainView?
+    //var picker = UIPickerView()
     
     override func loadView() {
         self.screen = MainView()
@@ -26,9 +27,9 @@ class ViewController: UIViewController {
 }
 
 extension ViewController:MainViewDelegate{
-    func tappedCalculateButton(dogInput:UITextField) {
+    func tappedCalculateButton(dogModel:DogModel) {
         let vc = ResultViewController()
-        vc.anos = dogInput.text ?? ""
+        vc.dogModel = dogModel
         navigationController?.pushViewController(vc, animated: false)
     }
 }

@@ -30,6 +30,7 @@ class ResultView: UIView {
         super.init(frame: frame)
         addSubview(titleLabelTextView)
         addSubview(IdadeDiasHumano)
+        self.backgroundColor = .brown
         configConstraints()
     }
     

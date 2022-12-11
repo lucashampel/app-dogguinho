@@ -9,18 +9,48 @@ import UIKit
 
 
 protocol MainViewDelegate:AnyObject{
-    func tappedCalculateButton(dogInput:UITextField)
+    func tappedCalculateButton(dogModel:DogModel)
 }
 
-class MainView: UIView {
+class MainView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
+    var dogSizeArray = ["Pequeno", "Medio", "Grande"]
+    var dogModel:DogModel = DogModel.init(tamanho: "Pequeno", idade: 1)
+    //picker methods
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2
+    }
     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if component == 0 {
+            return dogSizeArray.count
+        } else {
+            return 16
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if component == 0 {
+            return dogSizeArray[row]
+        } else {
+            return "\(row+1)"
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if component == 0{
+            dogModel.tamanho = dogSizeArray[row]
+        }
+        else if component == 1{
+            dogModel.idade = row
+        }
+    }
+    
+    //view methods
     private weak var delegate:MainViewDelegate?
     
     public func delegate(delegate:MainViewDelegate?){
         self.delegate = delegate
     }
-    
-    
     
     lazy var dogPicture: UIImageView = {
         let image = UIImageView()
@@ -33,27 +63,29 @@ class MainView: UIView {
     lazy var dogTextView: UILabel = {
         let text = UILabel()
         text.translatesAutoresizingMaskIntoConstraints = false
-        text.textColor = .black
+        text.textColor = .darkGray
         text.font = UIFont.boldSystemFont(ofSize: 20)
         text.textAlignment = .center
-        text.text = "Digite a idade do seu dogginnho"
+        text.text = "Cálculo da idade do seu dogguinho"
         return text
     }()
     
-    lazy var dogInput:UITextField = {
-        let text = UITextField()
+    lazy var dogIdadeTamanhoView: UILabel = {
+        let text = UILabel()
         text.translatesAutoresizingMaskIntoConstraints = false
-        text.autocorrectionType = .no
-        text.backgroundColor = UIColor.purple
-        text.borderStyle = .roundedRect
-        text.attributedPlaceholder = NSAttributedString( string: "Idade", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white.withAlphaComponent(0.4)])
-        text.textColor = .white
-        text.clipsToBounds = true
-        text.layer.cornerRadius = 12
-        text.layer.borderWidth = 1.0
-        text.layer.borderColor = UIColor.white.cgColor
+        text.textColor = .black
+        text.font = UIFont.boldSystemFont(ofSize: 20)
+        text.textAlignment = .center
+        text.text = "Tamanho                               Idade"
         return text
     }()
+    
+    lazy var pickerSize:UIPickerView = {
+        let picker = UIPickerView()
+        picker.translatesAutoresizingMaskIntoConstraints = false
+        return picker
+    }()
+
     
     lazy var calculateButton: UIButton = {
         let bt = UIButton(type: .system)
@@ -70,15 +102,18 @@ class MainView: UIView {
     }()
     
     @objc func tappedCalculateButton(){
-        delegate?.tappedCalculateButton(dogInput: dogInput)
+        delegate?.tappedCalculateButton(dogModel: dogModel)
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(self.dogPicture)
         self.addSubview(self.dogTextView)
-        self.addSubview(self.dogInput)
+        self.addSubview(self.dogIdadeTamanhoView)
+        self.addSubview(self.pickerSize)
         self.addSubview(self.calculateButton)
+        self.pickerSize.delegate = self
+        self.pickerSize.dataSource = self
         self.backgroundColor = .brown
         self.configContraints()
     }
@@ -95,11 +130,15 @@ class MainView: UIView {
             self.dogTextView.topAnchor.constraint(equalTo: dogPicture.bottomAnchor, constant: 20),
             self.dogTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             
-            self.dogInput.topAnchor.constraint(equalTo: self.dogTextView.bottomAnchor, constant: 20),
-            self.dogInput.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            self.dogInput.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            self.dogIdadeTamanhoView.topAnchor.constraint(equalTo: self.dogTextView.bottomAnchor, constant: 20),
+            self.dogIdadeTamanhoView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            self.dogIdadeTamanhoView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
             
-            self.calculateButton.topAnchor.constraint(equalTo: self.dogInput.bottomAnchor, constant: 20),
+            self.pickerSize.topAnchor.constraint(equalTo: self.dogIdadeTamanhoView.bottomAnchor),
+            self.pickerSize.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            self.pickerSize.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            
+            self.calculateButton.topAnchor.constraint(equalTo: self.pickerSize.bottomAnchor, constant: 20),
             self.calculateButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             self.calculateButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
             
